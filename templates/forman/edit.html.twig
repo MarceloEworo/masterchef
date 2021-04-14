@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Forman{% endblock %}
+
+{% block body %}
+    <h1>Edit Forman</h1>
+
+    {{ include('forman/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('forman_index') }}">back to list</a>
+
+    {{ include('forman/_delete_form.html.twig') }}
+{% endblock %}

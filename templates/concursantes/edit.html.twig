@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Concursantes{% endblock %}
+
+{% block body %}
+    <h1>Edit Concursantes</h1>
+
+    {{ include('concursantes/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('concursantes_index') }}">back to list</a>
+
+    {{ include('concursantes/_delete_form.html.twig') }}
+{% endblock %}

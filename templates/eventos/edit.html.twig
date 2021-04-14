@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Eventos{% endblock %}
+
+{% block body %}
+ 
+ <header>
+      <div class="logo">
+        <!-- imagen cip estella -->
+        <a href="index.html"><img src="img/Logopoli.png" alt="LogoPolitecnico"/></a>
+      </div>
+      <div class="center" id="titulo">
+        <!-- aqui la imagen de fondo irá con css -->
+        <h1>GESTOR DE EVENTOS</h1>
+      </div>
+    </header>
+    <div class="flex_container">
+      <aside class="side">
+        <nav id="menu">
+          <ul id="menu_item" >
+            <li><a class="boton" href="Eventos.html">Eventos</a></li>
+            <li><a class="boton" href="Participantes.html">Participantes</a></li>
+            <li><a class="boton" href="Estadisticas.html">Estadisticas</a></li>
+          </ul>
+        </nav>
+      </aside>
+        
+        <section class="main">
+          <h2>EDICIÓN DE EVENTOS</h2>
+      <fieldset class="fieldset" name="formulario_evento">
+        <legend class="titulofieldset">Edición de evento</legend>
+        <form class="formulario_evento" name="formulario_evento">
+         
+          <fieldset class="fieldset" name="listado_equipos">
+            <legend class="titulofieldset">Listado de equipos</legend>
+            
+              
+       
+        </form>
+      </fieldset>
+    </section>
+    </div>
+
+
+    <h1>Edit Eventos</h1>
+
+   {{ include('eventos/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('eventos_index') }}">back to list</a>
+
+    {{ include('eventos/_delete_form.html.twig') }}
+{% endblock %}

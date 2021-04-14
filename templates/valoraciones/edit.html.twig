@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Valoraciones{% endblock %}
+
+{% block body %}
+    <h1>Edit Valoraciones</h1>
+
+    {{ include('valoraciones/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('valoraciones_index') }}">back to list</a>
+
+    {{ include('valoraciones/_delete_form.html.twig') }}
+{% endblock %}

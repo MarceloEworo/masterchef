@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Forman{% endblock %}
+
+{% block body %}
+    <h1>Create new Forman</h1>
+
+    {{ include('forman/_form.html.twig') }}
+
+    <a href="{{ path('forman_index') }}">back to list</a>
+{% endblock %}

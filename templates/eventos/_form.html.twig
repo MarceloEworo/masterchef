@@ -1,0 +1,43 @@
+{{ form_start(form) }}
+ <section class="main">
+          <h2>EDICIÓN DE EVENTOS</h2>
+      <fieldset class="fieldset" name="formulario_evento">
+        <legend class="titulofieldset">Edición de evento</legend>
+        <form class="formulario_evento" name="formulario_evento">
+          <label>Nombre:</label>
+          {{ form_widget(form.nombreEvento) }}
+          <label>Fecha:</label>
+          {{ form_widget(form.fecha) }}
+          <label>Lugar:</label> 
+          {{ form_widget(form.lugar) }}
+          <label>Hora:</label>
+          {{ form_widget(form.hora) }}
+          <label>Descripción:</label>
+          {{ form_widget(form.descripcion) }}
+           <label>Estado:</label>
+          {{ form_widget(form.estado) }}
+           <label>Presentación: </label>
+          {{ form_widget(form.presentacion) }}
+           <label>Servicio: </label>
+          {{ form_widget(form.servicio) }}
+           <label>Sabor: </label>
+          {{ form_widget(form.sabor) }}
+           <label>Imagen: </label>
+          {{ form_widget(form.imagen) }}
+           <label>Triptico: </label>
+          {{ form_widget(form.triptico) }}
+          
+          <div class="hover">
+          <button class="botonpeque" name="boton_guardar_evento" type="submit">Guardar evento</button>
+          <button class="botonpeque" name="notificar_cambios" type="button">Notificar cambios a participantes</button>
+          </div>
+          <div class="hover">
+            <a class="botonpeque" href="eventos.html">Cancelar</a>
+          </div>
+        </form>
+      </fieldset>
+    </section>
+
+    {{ include('eventos/index.html.twig') }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

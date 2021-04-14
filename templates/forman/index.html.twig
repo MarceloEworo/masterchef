@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Forman index{% endblock %}
+
+{% block body %}
+    <h1>Forman index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rol</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for forman in formen %}
+            <tr>
+                <td>{{ forman.rol }}</td>
+                <td>
+                    <a href="{{ path('forman_show', {'nombreEquipo': forman.nombreEquipo}) }}">show</a>
+                    <a href="{{ path('forman_edit', {'nombreEquipo': forman.nombreEquipo}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('forman_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eventos index{% endblock %}
+
+{% block body %}
+
+
+  <header>
+      <div class="logo">
+        <!-- imagen cip estella -->
+        <a href="index.html"><img src="img/Logopoli.png" alt="LogoPolitecnico"/></a>
+      </div>
+      <div class="center" id="titulo">
+        <!-- aqui la imagen de fondo irá con css -->
+        <h1>GESTOR DE EVENTOS</h1>
+      </div>
+    </header>
+    <h1>Eventos</h1>
+     <div class="flex_container">
+      <aside class="side">
+        <nav id="menu">
+          <ul id="menu_item" >
+            <li><a class="boton" href="Eventos.html">Eventos</a></li>
+            <li><a class="boton" href="Participantes.html">Participantes</a></li>
+            <li><a class="boton" href="Estadisticas.html">Estadisticas</a></li>
+          </ul>
+        </nav>
+      </aside>
+        {% if eventos is defined %}
+        <section class="main">
+          <h2>EVENTOS</h2>
+        <fieldset name="listado_eventos" class="fieldset">
+          <legend class="titulofieldset">Listado de eventos</legend>
+          <tr>
+              {% for evento in eventos %}
+            
+                <td>{{ evento.nombreEvento }}</td>
+               <td> 
+                  <a href="{{ path('eventos_show', {'idEvento': evento.idEvento}) }}">Mostrar</a>
+                  <a href="{{ path('eventos_edit', {'idEvento': evento.idEvento}) }}">Editar</a>
+               </td><br/>
+                
+        {% else %}
+          
+                <td colspan="4">no records found</td>
+           
+        {% endfor %}
+                 
+         {% endif %}
+          
+                <td colspan="4">no records found</td>
+         </tr>
+          <div class="hoverinline"><a href="{{ path('eventos_new') }}">Nuevo evento</a></div>
+        </fieldset>
+    </section>
+    </div>
+    
+{% endblock %}

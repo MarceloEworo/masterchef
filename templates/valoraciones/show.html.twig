@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valoraciones{% endblock %}
+
+{% block body %}
+    <h1>Valoraciones</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdValoraciones</th>
+                <td>{{ valoracione.idValoraciones }}</td>
+            </tr>
+            <tr>
+                <th>Presentacion</th>
+                <td>{{ valoracione.presentacion }}</td>
+            </tr>
+            <tr>
+                <th>Servicio</th>
+                <td>{{ valoracione.servicio }}</td>
+            </tr>
+            <tr>
+                <th>Sabor</th>
+                <td>{{ valoracione.sabor }}</td>
+            </tr>
+            <tr>
+                <th>Imagen</th>
+                <td>{{ valoracione.imagen }}</td>
+            </tr>
+            <tr>
+                <th>Triptico</th>
+                <td>{{ valoracione.triptico }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('valoraciones_index') }}">back to list</a>
+
+    <a href="{{ path('valoraciones_edit', {'idValoraciones': valoracione.idValoraciones}) }}">edit</a>
+
+    {{ include('valoraciones/_delete_form.html.twig') }}
+{% endblock %}

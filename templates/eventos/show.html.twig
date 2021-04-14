@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eventos{% endblock %}
+
+{% block body %}
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdEvento</th>
+                <td>{{ evento.idEvento }}</td>
+            </tr>
+            <tr>
+                <th>NombreEvento</th>
+                <td>{{ evento.nombreEvento }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ evento.fecha ? evento.fecha|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Hora</th>
+                <td>{{ evento.hora ? evento.hora|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ evento.estado }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ evento.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Lugar</th>
+                <td>{{ evento.lugar }}</td>
+            </tr>
+            <tr>
+                <th>Presentacion</th>
+                <td>{{ evento.presentacion }}</td>
+            </tr>
+            <tr>
+                <th>Servicio</th>
+                <td>{{ evento.servicio }}</td>
+            </tr>
+            <tr>
+                <th>Sabor</th>
+                <td>{{ evento.sabor }}</td>
+            </tr>
+            <tr>
+                <th>Imagen</th>
+                <td>{{ evento.imagen }}</td>
+            </tr>
+            <tr>
+                <th>Triptico</th>
+                <td>{{ evento.triptico }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('eventos_index') }}">back to list</a>
+
+    <a href="{{ path('eventos_edit', {'idEvento': evento.idEvento}) }}">edit</a>
+
+    
+{% endblock %}

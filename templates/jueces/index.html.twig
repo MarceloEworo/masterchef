@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jueces index{% endblock %}
+
+{% block body %}
+    <h1>Jueces index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdJuez</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Departamento</th>
+                <th>Intolerancia</th>
+                <th>Correo</th>
+                <th>Clave</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for juece in jueces %}
+            <tr>
+                <td>{{ juece.idJuez }}</td>
+                <td>{{ juece.nombre }}</td>
+                <td>{{ juece.apellidos }}</td>
+                <td>{{ juece.departamento }}</td>
+                <td>{{ juece.intolerancia }}</td>
+                <td>{{ juece.correo }}</td>
+                <td>{{ juece.clave }}</td>
+                <td>
+                    <a href="{{ path('jueces_show', {'idJuez': juece.idJuez}) }}">show</a>
+                    <a href="{{ path('jueces_edit', {'idJuez': juece.idJuez}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('jueces_new') }}">Create new</a>
+{% endblock %}

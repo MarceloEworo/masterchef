@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valoraciones index{% endblock %}
+
+{% block body %}
+    <h1>Valoraciones index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdValoraciones</th>
+                <th>Presentacion</th>
+                <th>Servicio</th>
+                <th>Sabor</th>
+                <th>Imagen</th>
+                <th>Triptico</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for valoracione in valoraciones %}
+            <tr>
+                <td>{{ valoracione.idValoraciones }}</td>
+                <td>{{ valoracione.presentacion }}</td>
+                <td>{{ valoracione.servicio }}</td>
+                <td>{{ valoracione.sabor }}</td>
+                <td>{{ valoracione.imagen }}</td>
+                <td>{{ valoracione.triptico }}</td>
+                <td>
+                    <a href="{{ path('valoraciones_show', {'idValoraciones': valoracione.idValoraciones}) }}">show</a>
+                    <a href="{{ path('valoraciones_edit', {'idValoraciones': valoracione.idValoraciones}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('valoraciones_new') }}">Create new</a>
+{% endblock %}

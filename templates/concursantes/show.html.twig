@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Concursantes{% endblock %}
+
+{% block body %}
+    <h1>Concursantes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdConcursante</th>
+                <td>{{ concursante.idConcursante }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ concursante.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ concursante.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Curso</th>
+                <td>{{ concursante.curso }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('concursantes_index') }}">back to list</a>
+
+    <a href="{{ path('concursantes_edit', {'idConcursante': concursante.idConcursante}) }}">edit</a>
+
+    {{ include('concursantes/_delete_form.html.twig') }}
+{% endblock %}

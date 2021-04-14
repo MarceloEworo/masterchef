@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipos index{% endblock %}
+
+{% block body %}
+<ul>
+             {% for equipo in equipos %}
+
+
+              <li class="linea">
+              <div class="inline">
+                <p>{{ equipo.nombreEquipo }}</p>
+                </div>
+                <div class="hoverinline">
+                <a href="{{ path('equipos_edit', {'nombreEquipo': equipo.nombreEquipo}) }}" class="botonpeque" name="editar"><button >Editar</button></a>
+                </div>
+                <div class="hoverinline">
+                
+                {{ include('equipos/_delete_form.html.twig') }}
+                </div>
+                </li>
+
+          
+
+           
+          {% else %}
+           
+                <li>No hay nuevos eventos activos</li>
+           
+        {% endfor %}
+          </ul>
+           
+    <h1>Equipos index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NombreEquipo</th>
+                <th>Triptico</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for equipo in equipos %}
+            <tr>
+                <td>{{ equipo.nombreEquipo }}</td>
+                <td>{{ equipo.triptico }}</td>
+                <td>
+                   <a href="{{ path('equipos_show', {'nombreEquipo': equipo.nombreEquipo}) }}">show</a>
+                    edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('equipos_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jueces{% endblock %}
+
+{% block body %}
+    <h1>Jueces</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdJuez</th>
+                <td>{{ juece.idJuez }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ juece.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ juece.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Departamento</th>
+                <td>{{ juece.departamento }}</td>
+            </tr>
+            <tr>
+                <th>Intolerancia</th>
+                <td>{{ juece.intolerancia }}</td>
+            </tr>
+            <tr>
+                <th>Correo</th>
+                <td>{{ juece.correo }}</td>
+            </tr>
+            <tr>
+                <th>Clave</th>
+                <td>{{ juece.clave }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('jueces_index') }}">back to list</a>
+
+    <a href="{{ path('jueces_edit', {'idJuez': juece.idJuez}) }}">edit</a>
+
+    {{ include('jueces/_delete_form.html.twig') }}
+{% endblock %}

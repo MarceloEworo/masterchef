@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Valoraciones{% endblock %}
+
+{% block body %}
+    <h1>Create new Valoraciones</h1>
+
+    {{ include('valoraciones/_form.html.twig') }}
+
+    <a href="{{ path('valoraciones_index') }}">back to list</a>
+{% endblock %}
